@@ -14,7 +14,7 @@ export const actions = {
 
     try {
       let Posts = await fetch(
-        `http://geoffgraham.me/wp-json/wp/v2/posts?page=1&per_page=10`
+        `https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=10`
       ).then(res => res.json())
 
       Posts = Posts.filter(el => el.status == "publish")
