@@ -1,6 +1,6 @@
 # smashing-vue
 
-> My doozie Nuxt.js project
+> My priceless Nuxt.js project
 
 ## Build Setup
 

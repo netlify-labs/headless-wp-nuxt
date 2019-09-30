@@ -1,72 +1,68 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        smashing-vue
-      </h1>
-      <h2 class="subtitle">
-        My doozie Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+<div class="posts">
+  <main>
+    <h2>Posts</h2>
+    <div class="post" v-for="post in Posts" v-bind:key="post.id">
+      <h3><a :href="post.slug">{{ post.title.rendered }}</a></h3>
+      {{ post.excerpt.rendered }}
     </div>
-  </div>
+  </main>
+  <aside>
+    <h2>Categories</h2>
+    <ul class="categories-list" v-for="category in Categories" v-bind:key="category.id">
+      <li><a :href="category.slug">{{ category.name.rendered }}</a></li>
+    </ul>
+  </aside>
+</div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapState } from 'vuex';
 
 export default {
-  components: {
-    Logo
+  computed: {
+    ...mapState(['Posts'])
+  },
+  mounted() {
+    this.$store.dispatch('getPosts');
   }
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.posts {
+  display: grid;
+  grid-template-columns: 3;
+  grid-auto-rows: 3;
+  grid-gap: 3em;
+  margin: 3em auto;
+  max-width: 80vw;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+main {
+  grid-column: 1 / 3;
+  grid-row: 1
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+aside {
+  grid-column: 3 / 4;
+  grid-row: 1;
 }
 
-.links {
-  padding-top: 15px;
+h2 {
+  margin-bottom: 2em;
+}
+
+.post,
+.categories-list {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, .25);
+  margin-bottom: 2em;
+  padding: 2em;
+
+  h3 {
+    margin-bottom: 1em;
+  }
 }
 </style>
