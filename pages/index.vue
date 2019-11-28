@@ -2,7 +2,7 @@
   <div class="posts">
     <main>
       <h2>Posts</h2>
-      <div class="post" v-for="post in Posts" :key="post.id">
+      <div class="post" v-for="post in posts" :key="post.id">
         <h3>
           <a :href="post.slug">{{ post.title.rendered }}</a>
         </h3>
@@ -10,12 +10,12 @@
       </div>
     </main>
     <aside>
-      <h2>Categories</h2>
-      <!-- <ul class="categories-list" v-for="category in categories" v-bind:key="category.id">
+      <h2>Tags</h2>
+      <ul class="categories-list" v-for="tag in tags" :key="tag">
         <li>
-          <a :href="category.slug">{{ category.name.rendered }}</a>
+          <a>{{ tag }}</a>
         </li>
-      </ul>-->
+      </ul>
     </aside>
   </div>
 </template>
@@ -24,7 +24,10 @@
 export default {
   computed: {
     posts() {
-      return this.$store.state.Posts;
+      return this.$store.state.posts;
+    },
+    tags() {
+      return this.posts.map(el => el.tags);
     }
   },
   mounted() {
