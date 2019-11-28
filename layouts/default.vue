@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import MainNav from '~/components/MainNav.vue'
+import MainNav from "~/components/MainNav.vue";
 
 export default {
   components: {
     MainNav
-  },
-}
+  }
+};
 </script>
 
 <style>
 html {
-  font-family: 'IBM Plex Serif', serif;
+  font-family: "IBM Plex Serif", serif;
   font-size: 18px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -34,7 +34,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'IBM Plex Serif', serif;
+  font-family: "IBM Plex Serif", serif;
 }
 
 *,
