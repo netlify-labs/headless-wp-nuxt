@@ -2,30 +2,30 @@
   <div class="posts">
     <main>
       <h2>Posts</h2>
-      <div class="post" v-for="post in posts" v-bind:key="post.id">
+      <div class="post" v-for="post in Posts" :key="post.id">
         <h3>
           <a :href="post.slug">{{ post.title.rendered }}</a>
         </h3>
-        {{ post.excerpt.rendered }}
+        <div v-html="post.excerpt.rendered"></div>
       </div>
     </main>
     <aside>
       <h2>Categories</h2>
-      <ul class="categories-list" v-for="category in categories" v-bind:key="category.id">
+      <!-- <ul class="categories-list" v-for="category in categories" v-bind:key="category.id">
         <li>
           <a :href="category.slug">{{ category.name.rendered }}</a>
         </li>
-      </ul>
+      </ul>-->
     </aside>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
   computed: {
-    ...mapState(["posts"])
+    posts() {
+      return this.$store.state.Posts;
+    }
   },
   mounted() {
     this.$store.dispatch("getPosts");
