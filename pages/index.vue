@@ -97,7 +97,6 @@ a.readmore {
   padding: 4px 9px;
   margin: 6px;
   border-radius: 6px;
-  float: left;
   background-color: #fff2cc;
 }
 

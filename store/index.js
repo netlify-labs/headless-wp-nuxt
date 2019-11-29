@@ -43,7 +43,7 @@ export const actions = {
     if (state.tags.length) return
     const allTags = posts.map(el => {
       if (!el.tags.length) return
-      return el.tags.filter(() => true )
+      return el.tags.filter(el => el != null);
     })
     console.log(`allTags: ${allTags}`)
 
