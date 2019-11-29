@@ -39,19 +39,20 @@ export const actions = {
       console.log(err)
     }
   },
-  async getTags({ state, posts }) {
+  async getTags({ state }, posts) {
     if (state.tags.length) return
-    const allTags = posts.map(el => el.tags)
+    const allTags = posts.map(el => {
+      if (!el.tags.length) 
+      return el.tags
+    })
+    console.log(`allTags: ${allTags}`)
 
     try {
       let tags = await fetch(
         `https://css-tricks.com/wp-json/wp/v2/tags?include=1,19,3`
       ).then(res => res.json())
 
-      // tags = tags
-      //   .map(({ tag }) => ({
-      //     tag
-      //   }))
+      console.log(`tags: ${tags}`)
 
       commit("updateTags", tags)
     } catch (err) {
