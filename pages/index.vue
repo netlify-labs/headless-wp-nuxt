@@ -12,9 +12,9 @@
     </main>
     <aside>
       <h2>Categories</h2>
-      <ul class="categories-list" v-for="tag in tags" :key="tag">
+      <ul class="categories-list" v-for="tag in tags" :key="tag.id">
         <li>
-          <a>{{ tag }}</a>
+          <a>{{ tag.name }}</a>
         </li>
       </ul>
     </aside>
