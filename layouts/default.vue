@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import AppNav from "~/components/AppNav.vue"
+import AppNav from "~/components/AppNav.vue";
 
 export default {
   components: {
     AppNav
   }
-}
+};
 </script>
 
 <style>
@@ -42,5 +42,15 @@ h3 {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.individual h3 {
+  margin: 2em 0 25px;
+}
+
+h1 {
+  color: #741910;
+  margin-bottom: 30px;
+  text-align: center;
 }
 </style>

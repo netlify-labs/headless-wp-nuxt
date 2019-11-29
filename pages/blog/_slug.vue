@@ -1,5 +1,5 @@
 <template>
-  <main class="post">
+  <main class="post individual">
     <h1>{{ post.title.rendered }}</h1>
     <section v-html="post.content.rendered"></section>
   </main>
@@ -36,14 +36,5 @@ main.post {
   margin: 30px auto 50px;
   max-width: 800px;
   padding-bottom: 70px;
-}
-
-h3 {
-  margin: 2em 0 25px;
-}
-
-h1 {
-  margin-bottom: 30px;
-  text-align: center;
 }
 </style>

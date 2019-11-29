@@ -7,6 +7,7 @@
           <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
         </h3>
         <div v-html="post.excerpt.rendered"></div>
+        <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
       </div>
     </main>
     <aside>
@@ -65,6 +66,13 @@ a:active,
 a:visited {
   text-decoration: none;
   color: black;
+}
+
+a.readmore {
+  color: #741910;
+  padding-top: 20px;
+  display: block;
+  text-align: right;
 }
 
 .post,
