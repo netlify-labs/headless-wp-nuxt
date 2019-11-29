@@ -22,6 +22,7 @@ export default {
     };
   },
   mounted() {
+    this.$store.dispatch("getPosts");
     setTimeout(() => {
       console.log(`posts: ${this.posts}`);
       console.log(`post: ${this.post}`);
