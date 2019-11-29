@@ -2,7 +2,7 @@
   <div class="posts">
     <main>
       <h2>Posts</h2>
-      <div class="post" v-for="post in posts" :key="post.id">
+      <div class="post" v-for="post in sortedPosts" :key="post.id">
         <h3>
           <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
         </h3>
@@ -15,7 +15,7 @@
       <div class="tags-list">
         <ul>
           <li v-for="tag in tags" :key="tag.id">
-            <a>{{ tag.name }}</a>
+            <a @click="selectedTag === tag.id">{{ tag.name }}</a>
           </li>
         </ul>
       </div>
@@ -25,16 +25,30 @@
 
 <script>
 export default {
+  data() {
+    return {
+      selectedTag: null
+    }
+  },
   computed: {
     posts() {
       return this.$store.state.posts;
     },
     tags() {
       return this.$store.state.tags;
+    },
+    sortedPosts() {
+      if (!this.selectedTag) return this.posts
+      return this.posts.filter(el => el.tags.includes(this.selectedTag))
     }
   },
   mounted() {
     this.$store.dispatch("getPosts");
+  },
+  watch: {
+    selectedTag(oldV, newV) {
+      console.log(oldV, newV)
+    }
   }
 };
 </script>
@@ -102,5 +116,6 @@ a.readmore {
 
 .tags-list li a {
   color: #d44119;
+  cursor: pointer;
 }
 </style>
