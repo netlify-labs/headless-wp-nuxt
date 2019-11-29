@@ -41,10 +41,11 @@ export const actions = {
   },
   async getTags({ state, commit }, posts) {
     if (state.tags.length) return
-    const allTags = posts.map(el => {
+    let allTags = posts.map(el => {
       if (!el.tags.length) return
-      return el.tags.filter(el => el != null);
+      return el.tags
     })
+    allTags = allTags.filter(el => el != null).join()
     console.log(`allTags: ${allTags}`)
 
     try {
