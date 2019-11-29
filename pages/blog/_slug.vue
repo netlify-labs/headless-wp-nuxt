@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-
 export default {
   computed: {
-    ...mapState(["posts"]),
+    posts() {
+      return this.$store.state.posts;
+    },
     post() {
       return this.posts.find(el => el.slug === this.slug);
     }
