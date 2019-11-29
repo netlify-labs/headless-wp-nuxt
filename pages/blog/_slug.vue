@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <main class="post">
     <h1>{{ post.title.rendered }}</h1>
-    <section v-html="post.content"></section>
+    <section v-html="post.content.rendered"></section>
   </main>
 </template>
 
@@ -23,8 +23,8 @@ export default {
   mounted() {
     this.$store.dispatch("getPosts");
     setTimeout(() => {
-      console.log(`posts: ${this.posts}`);
-      console.log(`post: ${this.post}`);
+      console.log(`posts: ${JSON.stringify(this.posts, null, 2)}`);
+      console.log(`post: ${JSON.stringify(this.post, null, 2)}`);
       console.log(`slug: ${this.slug}`);
     }, 3000);
   }

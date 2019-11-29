@@ -15,7 +15,7 @@
         <li>
           <a>{{ tag }}</a>
         </li>
-      </ul> -->
+      </ul>-->
     </aside>
   </div>
 </template>
@@ -24,19 +24,19 @@
 export default {
   computed: {
     posts() {
-      return this.$store.state.posts
+      return this.$store.state.posts;
     }
     // categories() {
     //   return this.posts.map(el => el.tags)
     // }
   },
   mounted() {
-    this.$store.dispatch("getPosts")
+    this.$store.dispatch("getPosts");
   }
-}
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .posts {
   display: grid;
   grid-template-columns: 3;
