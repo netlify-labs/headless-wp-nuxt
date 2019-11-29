@@ -42,14 +42,14 @@ export const actions = {
   async getTags({ state }, posts) {
     if (state.tags.length) return
     const allTags = posts.map(el => {
-      if (!el.tags.length) 
+      if (el.tags.length) 
       return el.tags
     })
     console.log(`allTags: ${allTags}`)
 
     try {
       let tags = await fetch(
-        `https://css-tricks.com/wp-json/wp/v2/tags?include=1,19,3`
+        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags}`
       ).then(res => res.json())
 
       console.log(`tags: ${tags}`)
