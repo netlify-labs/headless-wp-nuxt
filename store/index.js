@@ -50,7 +50,7 @@ export const actions = {
 
     try {
       let tags = await fetch(
-        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags.join()}`
+        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags}`
       ).then(res => res.json())
 
       tags = tags
