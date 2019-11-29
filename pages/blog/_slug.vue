@@ -1,7 +1,8 @@
 <template>
   <main>
-    <h1>{{ post.title.rendered }}</h1>
-    <section>{{ post.content }}</section>
+    <h1>Hi</h1>
+    <!-- <h1>{{ post.title.rendered }}</h1>
+    <section v-html="post.content"></section>-->
   </main>
 </template>
 
@@ -17,7 +18,7 @@ export default {
   },
   data() {
     return {
-      id: this.$route.params.slug
+      slug: this.$route.params.slug
     };
   }
 };
