@@ -20,6 +20,13 @@ export default {
     return {
       slug: this.$route.params.slug
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      console.log(`posts: ${this.posts}`);
+      console.log(`post: ${this.post}`);
+      console.log(`slug: ${this.slug}`);
+    }, 3000);
   }
 };
 </script>
