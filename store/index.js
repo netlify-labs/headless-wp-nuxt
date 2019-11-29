@@ -1,10 +1,10 @@
 export const state = () => ({
-  Posts: []
+  posts: []
 })
 
 export const mutations = {
   updatePosts: (state, payload) => {
-    state.Posts = payload
+    state.posts = payload
   }
 }
 
@@ -13,27 +13,25 @@ export const actions = {
     if (state.getPosts) return
 
     try {
-      let Posts = await fetch(
-        `https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=10`
+      let posts = await fetch(
+        `https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20&_embed=1`
       ).then(res => res.json())
 
-      Posts = Posts.filter(el => el.status == "publish")
-      .map(({
-        id,
-        slug,
-        title,
-        excerpt
-      }) => ({
-        id,
-        slug,
-        title,
-        excerpt
-      }))
+      posts = posts
+        .filter(el => el.status == "publish")
+        .map(({ id, slug, title, excerpt, date, tags, content }) => ({
+          id,
+          slug,
+          title,
+          excerpt,
+          date,
+          tags,
+          content
+        }))
 
-      commit('updatePosts', Posts)
+      commit("updatePosts", posts)
     } catch (err) {
       console.log(err)
     }
   }
-
 }

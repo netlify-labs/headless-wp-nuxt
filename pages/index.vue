@@ -1,30 +1,37 @@
 <template>
-<div class="posts">
-  <main>
-    <h2>Posts</h2>
-    <div class="post" v-for="post in Posts" v-bind:key="post.id">
-      <h3><a :href="post.slug">{{ post.title.rendered }}</a></h3>
-      {{ post.excerpt.rendered }}
-    </div>
-  </main>
-  <aside>
-    <h2>Categories</h2>
-    <ul class="categories-list" v-for="category in Categories" v-bind:key="category.id">
-      <li><a :href="category.slug">{{ category.name.rendered }}</a></li>
-    </ul>
-  </aside>
-</div>
+  <div class="posts">
+    <main>
+      <h2>Posts</h2>
+      <div class="post" v-for="post in posts" :key="post.id">
+        <h3>
+          <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
+        </h3>
+        <div v-html="post.excerpt.rendered"></div>
+      </div>
+    </main>
+    <aside>
+      <h2>Categories</h2>
+      <!-- <ul class="categories-list" v-for="tag in tags" :key="tag">
+        <li>
+          <a>{{ tag }}</a>
+        </li>
+      </ul> -->
+    </aside>
+  </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   computed: {
-    ...mapState(['Posts'])
+    posts() {
+      return this.$store.state.posts
+    }
+    // categories() {
+    //   return this.posts.map(el => el.tags)
+    // }
   },
   mounted() {
-    this.$store.dispatch('getPosts');
+    this.$store.dispatch("getPosts")
   }
 }
 </script>
@@ -41,7 +48,7 @@ export default {
 
 main {
   grid-column: 1 / 3;
-  grid-row: 1
+  grid-row: 1;
 }
 
 aside {
@@ -53,11 +60,18 @@ h2 {
   margin-bottom: 2em;
 }
 
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
 .post,
 .categories-list {
   background-color: #fff;
   border: 1px solid #eaeaea;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, .25);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 2em;
   padding: 2em;
 

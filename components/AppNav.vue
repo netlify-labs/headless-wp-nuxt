@@ -5,16 +5,14 @@
         <nuxt-link exact to="/">Home</nuxt-link>
       </li>
       <li>
-        <nuxt-link exact to="/posts">Blog</nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  export default {
-
-  }
+export default {};
 </script>
 
 <style lang="scss" scoped>
