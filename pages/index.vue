@@ -48,9 +48,9 @@ export default {
       return this.posts.filter(el => el.tags.includes(this.selectedTag))
     }
   },
-  // created() {
-  //   this.$store.dispatch("getPosts");
-  // },
+  created() {
+    this.$store.dispatch("getPosts");
+  },
   methods: {
     updateTag(tag) {
       if (!this.selectedTag) {
