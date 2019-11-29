@@ -41,24 +41,20 @@ export const actions = {
   },
   async getTags({ state, commit }, posts) {
     if (state.tags.length) return
-    let allTags = posts.map(el => {
-      if (!el.tags.length) return
-      return el.tags
-    })
-    allTags = allTags.flat().join()
-    console.log(`allTags: ${allTags}`)
+
+    let allTags = posts.reduce((acc, item) => {
+      return acc.concat(item.tags);
+    }, [])
+    allTags = allTags.join()
 
     try {
       let tags = await fetch(
-        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags}`
+        `https://css-tricks.com/wp-json/wp/v2/tags?page=1&per_page=40&include=${allTags}`
       ).then(res => res.json())
 
-      tags = tags
-        .map(({ id, name }) => ({
-          id, name
-        }))
-
-      console.log(`tags: ${JSON.stringify(tags, null, 2)}`)
+      tags = tags.map(({ id, name }) => ({
+        id, name
+      }))
 
       commit("updateTags", tags)
     } catch (err) {
