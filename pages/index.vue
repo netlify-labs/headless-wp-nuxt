@@ -7,6 +7,7 @@
           <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
         </h3>
         <div v-html="post.excerpt.rendered"></div>
+        <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
       </div>
     </main>
     <aside>
@@ -15,7 +16,7 @@
         <li>
           <a>{{ tag }}</a>
         </li>
-      </ul> -->
+      </ul>-->
     </aside>
   </div>
 </template>
@@ -24,19 +25,19 @@
 export default {
   computed: {
     posts() {
-      return this.$store.state.posts
+      return this.$store.state.posts;
     }
     // categories() {
     //   return this.posts.map(el => el.tags)
     // }
   },
   mounted() {
-    this.$store.dispatch("getPosts")
+    this.$store.dispatch("getPosts");
   }
-}
+};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .posts {
   display: grid;
   grid-template-columns: 3;
@@ -65,6 +66,13 @@ a:active,
 a:visited {
   text-decoration: none;
   color: black;
+}
+
+a.readmore {
+  color: #741910;
+  padding-top: 20px;
+  display: block;
+  text-align: right;
 }
 
 .post,
