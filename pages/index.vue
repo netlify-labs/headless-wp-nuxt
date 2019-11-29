@@ -11,11 +11,11 @@
     </main>
     <aside>
       <h2>Categories</h2>
-      <ul class="categories-list" v-for="tag in tags" :key="tag">
+      <!-- <ul class="categories-list" v-for="tag in tags" :key="tag">
         <li>
           <a>{{ tag }}</a>
         </li>
-      </ul>
+      </ul> -->
     </aside>
   </div>
 </template>
@@ -25,10 +25,10 @@ export default {
   computed: {
     posts() {
       return this.$store.state.posts
-    },
-    categories() {
-      return this.posts.map(el => el.tags)
     }
+    // categories() {
+    //   return this.posts.map(el => el.tags)
+    // }
   },
   mounted() {
     this.$store.dispatch("getPosts")
