@@ -32,4 +32,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+main.post {
+  margin: 30px auto 50px;
+  max-width: 800px;
+  padding-bottom: 70px;
+}
+
+h3 {
+  margin: 2em 0 25px;
+}
+
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+}
 </style>
