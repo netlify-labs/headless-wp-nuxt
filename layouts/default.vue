@@ -71,7 +71,15 @@ code {
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
   background: #eee;
-  padding: 8px 10px;
   border-radius: 4px;
+}
+
+pre {
+  padding: 8px 10px;
+}
+
+code {
+  padding: 2px 0;
+  line-height: 1.5;
 }
 </style>
