@@ -10,7 +10,7 @@ export const mutations = {
 
 export const actions = {
   async getPosts({ state, commit }) {
-    if (state.getPosts) return
+    if (state.posts.length) return
 
     try {
       let posts = await fetch(
