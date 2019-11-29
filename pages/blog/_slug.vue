@@ -1,8 +1,7 @@
 <template>
   <main>
-    <h1>Hi</h1>
-    <!-- <h1>{{ post.title.rendered }}</h1>
-    <section v-html="post.content"></section>-->
+    <h1>{{ post.title.rendered }}</h1>
+    <section v-html="post.content"></section>
   </main>
 </template>
 
