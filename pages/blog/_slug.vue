@@ -20,7 +20,7 @@ export default {
       slug: this.$route.params.slug
     };
   },
-  mounted() {
+  created() {
     this.$store.dispatch("getPosts");
   }
 };
