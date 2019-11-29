@@ -63,7 +63,8 @@ video {
   margin: 25px 0;
 }
 
-pre {
+pre,
+code {
   white-space: pre-wrap; /* css-3 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
