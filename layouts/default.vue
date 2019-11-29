@@ -1,18 +1,18 @@
 <template>
   <div>
-    <main-nav />
+    <app-nav />
     <nuxt />
   </div>
 </template>
 
 <script>
-import MainNav from "~/components/MainNav.vue";
+import AppNav from "~/components/AppNav.vue"
 
 export default {
   components: {
-    MainNav
+    AppNav
   }
-};
+}
 </script>
 
 <style>

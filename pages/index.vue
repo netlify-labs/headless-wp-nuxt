@@ -4,13 +4,13 @@
       <h2>Posts</h2>
       <div class="post" v-for="post in posts" :key="post.id">
         <h3>
-          <a :href="post.slug">{{ post.title.rendered }}</a>
+          <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
         </h3>
         <div v-html="post.excerpt.rendered"></div>
       </div>
     </main>
     <aside>
-      <h2>Tags</h2>
+      <h2>Categories</h2>
       <ul class="categories-list" v-for="tag in tags" :key="tag">
         <li>
           <a>{{ tag }}</a>
@@ -24,16 +24,16 @@
 export default {
   computed: {
     posts() {
-      return this.$store.state.posts;
+      return this.$store.state.posts
     },
-    tags() {
-      return this.posts.map(el => el.tags);
+    categories() {
+      return this.posts.map(el => el.tags)
     }
   },
   mounted() {
-    this.$store.dispatch("getPosts");
+    this.$store.dispatch("getPosts")
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -58,6 +58,13 @@ aside {
 
 h2 {
   margin-bottom: 2em;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: black;
 }
 
 .post,
