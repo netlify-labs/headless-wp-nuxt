@@ -43,13 +43,13 @@ export const actions = {
     if (state.tags.length) return
     const allTags = posts.map(el => {
       if (!el.tags.length) return
-      return el.tags
+      return el.tags.filter(() => true )
     })
     console.log(`allTags: ${allTags}`)
 
     try {
       let tags = await fetch(
-        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags}`
+        `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags.join()}`
       ).then(res => res.json())
 
       tags = tags

@@ -12,11 +12,13 @@
     </main>
     <aside>
       <h2>Categories</h2>
-      <ul class="tags-list">
-        <li v-for="tag in tags" :key="tag.id">
-          <a>{{ tag.name }}</a>
-        </li>
-      </ul>
+      <div class="tags-list">
+        <ul>
+          <li v-for="tag in tags" :key="tag.id">
+            <a>{{ tag.name }}</a>
+          </li>
+        </ul>
+      </div>
     </aside>
   </div>
 </template>
@@ -96,10 +98,10 @@ a.readmore {
   margin: 6px;
   border-radius: 6px;
   float: left;
+  background-color: #fff2cc;
 }
 
 .tags-list li a {
-  background-color: #fff2cc;
-    color: #d44119;
+  color: #d44119;
 }
 </style>

@@ -82,4 +82,8 @@ code {
   padding: 2px 0;
   line-height: 1.5;
 }
+
+p {
+  margin: 15px 0 20px;
+}
 </style>
