@@ -14,8 +14,13 @@
       <h2>Categories</h2>
       <div class="tags-list">
         <ul>
-          <li v-for="tag in tags" :key="tag.id">
-            <a @click="selectedTag === tag.id">{{ tag.name }}</a>
+          <li 
+            @click="updateTag(tag)" 
+            v-for="tag in tags" 
+            :key="tag.id" 
+            :class="[tag.id === selectedTag ? activeClass : '']">
+              <a>{{ tag.name }}</a>
+              <span v-if="tag.id === selectedTag">✕</span>
           </li>
         </ul>
       </div>
@@ -27,7 +32,8 @@
 export default {
   data() {
     return {
-      selectedTag: null
+      selectedTag: null,
+      activeClass: 'active'
     }
   },
   computed: {
@@ -45,11 +51,15 @@ export default {
   mounted() {
     this.$store.dispatch("getPosts");
   },
-  watch: {
-    selectedTag(oldV, newV) {
-      console.log(oldV, newV)
+  methods: {
+    updateTag(tag) {
+      if (!this.selectedTag) {
+        this.selectedTag = tag.id
+      } else {
+        this.selectedTag = null
+      }
     }
-  }
+  },
 };
 </script>
 
@@ -112,10 +122,19 @@ a.readmore {
   margin: 6px;
   border-radius: 6px;
   background-color: #fff2cc;
+  span {
+    color: #d44119;
+    cursor: pointer;
+  }
 }
 
 .tags-list li a {
   color: #d44119;
   cursor: pointer;
+}
+
+.active {
+  border: 1px solid #d44119;
+  background-color: #fae091 !important;
 }
 </style>
