@@ -22,11 +22,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getPosts");
-    setTimeout(() => {
-      console.log(`posts: ${JSON.stringify(this.posts, null, 2)}`);
-      console.log(`post: ${JSON.stringify(this.post, null, 2)}`);
-      console.log(`slug: ${this.slug}`);
-    }, 3000);
   }
 };
 </script>

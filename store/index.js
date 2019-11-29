@@ -1,15 +1,19 @@
 export const state = () => ({
-  posts: []
+  posts: [],
+  tags: []
 })
 
 export const mutations = {
-  updatePosts: (state, payload) => {
-    state.posts = payload
+  updatePosts: (state, posts) => {
+    state.posts = posts
+  },
+  updateTags: (state, tags) => {
+    state.tags = tags
   }
 }
 
 export const actions = {
-  async getPosts({ state, commit }) {
+  async getPosts({ state, commit, dispatch }) {
     if (state.posts.length) return
 
     try {
@@ -30,6 +34,29 @@ export const actions = {
         }))
 
       commit("updatePosts", posts)
+      dispatch("getTags", posts)
+    } catch (err) {
+      console.log(err)
+    }
+  },
+  async getTags({ state, commit }, posts) {
+    if (state.tags.length) return
+
+    let allTags = posts.reduce((acc, item) => {
+      return acc.concat(item.tags);
+    }, [])
+    allTags = allTags.join()
+
+    try {
+      let tags = await fetch(
+        `https://css-tricks.com/wp-json/wp/v2/tags?page=1&per_page=40&include=${allTags}`
+      ).then(res => res.json())
+
+      tags = tags.map(({ id, name }) => ({
+        id, name
+      }))
+
+      commit("updateTags", tags)
     } catch (err) {
       console.log(err)
     }

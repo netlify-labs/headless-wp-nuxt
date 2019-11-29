@@ -58,14 +58,32 @@ img {
   width: 100%;
 }
 
-pre {
+video {
+  width: 100%;
+  margin: 25px 0;
+}
+
+pre,
+code {
   white-space: pre-wrap; /* css-3 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
   white-space: -pre-wrap; /* Opera 4-6 */
   white-space: -o-pre-wrap; /* Opera 7 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
   background: #eee;
-  padding: 8px 10px;
   border-radius: 4px;
+}
+
+pre {
+  padding: 8px 10px;
+}
+
+code {
+  padding: 2px 0;
+  line-height: 1.5;
+}
+
+p {
+  margin: 15px 0 20px;
 }
 </style>
