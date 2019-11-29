@@ -40,21 +40,19 @@ export default {
 <style lang="scss">
 .posts {
   display: grid;
-  grid-template-columns: 3;
-  grid-auto-rows: 3;
-  grid-gap: 3em;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 30px;
   margin: 3em auto;
   max-width: 80vw;
 }
 
 main {
-  grid-column: 1 / 3;
-  grid-row: 1;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 aside {
-  grid-column: 3 / 4;
-  grid-row: 1;
+  grid-area: 1 / 2 / 2 / 3;
 }
 
 h2 {
@@ -76,7 +74,7 @@ a.readmore {
 }
 
 .post,
-.categories-list {
+.tags-list {
   background-color: #fff;
   border: 1px solid #eaeaea;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
@@ -97,6 +95,11 @@ a.readmore {
   padding: 4px 6px;
   margin: 6px;
   background: #741910;
+  border-radius: 3px;
+  float: left;
+}
+
+.tags-list li a {
   color: white;
 }
 </style>
