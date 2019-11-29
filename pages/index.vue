@@ -10,10 +10,10 @@
         <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
       </div>
     </main>
-    <aside class="tags-list" >
+    <aside>
       <h2>Categories</h2>
-      <ul v-for="tag in tags" :key="tag.id">
-        <li>
+      <ul class="tags-list">
+        <li v-for="tag in tags" :key="tag.id">
           <a>{{ tag.name }}</a>
         </li>
       </ul>
@@ -92,14 +92,14 @@ a.readmore {
 
 .tags-list li {
   display: inline-block;
-  padding: 4px 6px;
+  padding: 4px 9px;
   margin: 6px;
-  background: #741910;
-  border-radius: 3px;
+  border-radius: 6px;
   float: left;
 }
 
 .tags-list li a {
-  color: white;
+  background-color: #fff2cc;
+    color: #d44119;
 }
 </style>
