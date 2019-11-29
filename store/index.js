@@ -42,8 +42,7 @@ export const actions = {
   async getTags({ state }, posts) {
     if (state.tags.length) return
     const allTags = posts.map(el => {
-      if (el.tags.length) 
-      return el.tags
+      if (el.tags.length) return el.tags
     })
     console.log(`allTags: ${allTags}`)
 
@@ -52,7 +51,7 @@ export const actions = {
         `https://css-tricks.com/wp-json/wp/v2/tags?include=${allTags}`
       ).then(res => res.json())
 
-      console.log(`tags: ${tags}`)
+      console.log(`tags: ${JSON.stringify(tags, null, 2)}`)
 
       commit("updateTags", tags)
     } catch (err) {
