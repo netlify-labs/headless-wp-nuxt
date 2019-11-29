@@ -58,6 +58,11 @@ img {
   width: 100%;
 }
 
+video {
+  width: 100%;
+  margin: 25px 0;
+}
+
 pre {
   white-space: pre-wrap; /* css-3 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
