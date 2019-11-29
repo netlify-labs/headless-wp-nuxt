@@ -45,7 +45,7 @@ export const actions = {
       if (!el.tags.length) return
       return el.tags
     })
-    allTags = allTags.filter(el => el != null).join()
+    allTags = allTags.flat().join()
     console.log(`allTags: ${allTags}`)
 
     try {
