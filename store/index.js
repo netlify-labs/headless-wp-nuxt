@@ -39,7 +39,7 @@ export const actions = {
       console.log(err)
     }
   },
-  async getTags({ state }, posts) {
+  async getTags({ state, commit }, posts) {
     if (state.tags.length) return
     const allTags = posts.map(el => {
       if (el.tags.length) return el.tags
