@@ -48,7 +48,7 @@ export default {
       return this.posts.filter(el => el.tags.includes(this.selectedTag))
     }
   },
-  mounted() {
+  created() {
     this.$store.dispatch("getPosts");
   },
   methods: {
