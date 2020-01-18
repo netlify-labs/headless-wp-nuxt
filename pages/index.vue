@@ -7,8 +7,9 @@
           <h3>
             <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
           </h3>
+          <small>{{ post.date | formatDate }}</small>
           <div v-html="post.excerpt.rendered"></div>
-          <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
+          <a :href="`blog/${post.slug}`" class="readmore slide">Read more ⟶</a>
         </div>
       </main>
       <aside>
@@ -54,6 +55,15 @@ export default {
     sortedPosts() {
       if (!this.selectedTag) return this.posts;
       return this.posts.filter(el => el.tags.includes(this.selectedTag));
+    }
+  },
+  filters: {
+    formatDate(value) {
+      return new Date(value).toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
     }
   },
   created() {
@@ -110,7 +120,8 @@ a.readmore {
   color: #000;
   font-weight: 700;
   font-family: "Open Sans", serif;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
+  background: #fff;
 }
 
 .tags-title {
@@ -132,8 +143,12 @@ a.readmore {
   margin-top: -65px;
 }
 
+small {
+  color: #9d5615;
+}
+
 .post {
-  border-bottom: 1px solid #eaeaea;
+  border-bottom: 1px solid rgb(223, 222, 222);
   margin-bottom: 2em;
   padding-bottom: 2em;
   color: #444;
@@ -170,5 +185,39 @@ a.readmore {
 .active {
   border: 1px solid #d44119;
   background-color: #fae091 !important;
+}
+
+.slide {
+  position: relative;
+  background: transparent;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 1;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translateZ(0);
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:hover:before {
+    right: -1px;
+  }
+}
+
+.slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #000;
+  transition: right 0.3s ease;
+  z-index: -1;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: 108%;
+  backface-visibility: hidden;
 }
 </style>
