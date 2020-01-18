@@ -13,7 +13,7 @@
         </div>
       </main>
       <aside>
-        <h2>Tags</h2>
+        <h2 class="tags-title">Tags</h2>
         <div class="tags-list">
           <ul>
             <li
@@ -108,8 +108,27 @@ a.readmore {
   text-align: right;
 }
 
-.post,
+.tags-title {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 15px;
+  margin: 0 35px;
+  position: relative;
+  top: -25px;
+}
+
 .tags-list {
+  background: #f5f5f5;
+  padding: 70px 25px 25px;
+  margin-top: -65px;
+}
+
+.post {
   background-color: #fff;
   border: 1px solid #eaeaea;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
@@ -127,20 +146,22 @@ a.readmore {
 }
 
 .tags-list li {
+  font-family: "Open Sans", serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 15px;
+  margin: 0 0 10px 10px;
   display: inline-block;
-  padding: 4px 9px;
-  margin: 6px;
-  border-radius: 6px;
-  background-color: #fff2cc;
-  span {
-    color: #d44119;
-    cursor: pointer;
-  }
-}
-
-.tags-list li a {
-  color: #d44119;
+  font-size: 0.7rem !important;
+  border: 1px solid #000;
+  transition: all 0.3s;
+  outline: none;
+  font-weight: normal;
   cursor: pointer;
+  background: #fff;
+  a {
+    color: #000;
+  }
 }
 
 .active {
