@@ -1,5 +1,6 @@
 <template>
   <div class="posts">
+    <app-masthead></app-masthead>
     <main>
       <h2>Posts</h2>
       <div class="post" v-for="post in sortedPosts" :key="post.id">
@@ -30,7 +31,12 @@
 </template>
 
 <script>
+import AppMasthead from "@/components/AppMasthead.vue";
+
 export default {
+  components: {
+    AppMasthead
+  },
   data() {
     return {
       selectedTag: null,

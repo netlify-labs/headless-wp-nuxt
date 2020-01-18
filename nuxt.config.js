@@ -30,7 +30,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap"
+          "https://fonts.googleapis.com/css?family=Alata|Montserrat&display=swap"
       }
     ]
   },
@@ -41,7 +41,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ["~/assets/mixins.scss"],
   /*
    ** Plugins to load before mounting the App
    */

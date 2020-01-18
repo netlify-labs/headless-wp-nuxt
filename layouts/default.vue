@@ -17,7 +17,7 @@ export default {
 
 <style>
 html {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Montserrat", serif;
   font-size: 18px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -34,7 +34,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "IBM Plex Serif", serif;
+  font-family: "Alata", serif;
+  letter-spacing: 0.03em;
 }
 
 *,
