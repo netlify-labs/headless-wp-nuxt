@@ -2,6 +2,8 @@
 
 > _A quick template to get you started using Headless WordPress_
 
+![Headless WordPress Template Preview](https://ibb.co/1YcPsx9 "Template preview")
+
 ## Deploy this Template
 
 Click the "Deploy to Netlify" button, and you can configure it to fit your needs.
