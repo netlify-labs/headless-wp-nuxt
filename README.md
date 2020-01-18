@@ -1,12 +1,20 @@
-# smashing-vue
+# Headless Wordpress on the JAMstack
 
-> My priceless Nuxt.js project
+> A quick template to get you started using Headless WordPress
+
+# Deploy this Template
+
+Click the "Deploy to Netlify" button, and you can configure it to fit your needs.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-labs/headless-wp-nuxt?utm_source=github&utm_medium=headlesswp-sd&utm_campaign=devex)
+
+Article explaining full setup coming on Smashing Magazine soon!
 
 ## Build Setup
 
 ```bash
 # install dependencies
-$ npm i
+$ npm install
 
 # serve with hot reload at localhost:3000
 $ npm run dev
