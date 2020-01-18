@@ -1,8 +1,8 @@
 # Headless Wordpress on the JAMstack
 
-> A quick template to get you started using Headless WordPress
+> _A quick template to get you started using Headless WordPress_
 
-# Deploy this Template
+## Deploy this Template
 
 Click the "Deploy to Netlify" button, and you can configure it to fit your needs.
 
