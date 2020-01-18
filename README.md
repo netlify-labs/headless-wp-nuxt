@@ -2,7 +2,7 @@
 
 > _A quick template to get you started using Headless WordPress_
 
-![Headless WordPress Template Preview](https://ibb.co/1YcPsx9 "Template preview")
+![Headless WordPress Template Preview](https://i.ibb.co/4wkXsxj/fullpreview-smashing.png "Template preview")
 
 ## Deploy this Template
 
