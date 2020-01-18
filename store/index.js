@@ -34,7 +34,6 @@ export const actions = {
         }))
 
       commit("updatePosts", posts)
-      dispatch("getTags", posts)
     } catch (err) {
       console.log(err)
     }
@@ -43,7 +42,7 @@ export const actions = {
     if (state.tags.length) return
 
     let allTags = posts.reduce((acc, item) => {
-      return acc.concat(item.tags);
+      return acc.concat(item.tags)
     }, [])
     allTags = allTags.join()
 
@@ -53,7 +52,8 @@ export const actions = {
       ).then(res => res.json())
 
       tags = tags.map(({ id, name }) => ({
-        id, name
+        id,
+        name
       }))
 
       commit("updateTags", tags)

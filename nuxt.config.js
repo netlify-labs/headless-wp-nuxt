@@ -45,7 +45,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/posts.server.js"],
+  plugins: ["~/plugins/posts.server.js", "~/plugins/tags.server.js"],
   generate: {
     routes: dynamicRoutes
   },
