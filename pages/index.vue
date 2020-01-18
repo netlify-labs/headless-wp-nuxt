@@ -118,6 +118,7 @@ a.readmore {
 
   h3 {
     margin-bottom: 1em;
+    font-size: 25px;
   }
 }
 

@@ -2,7 +2,7 @@
   <div class="nav">
     <ul>
       <li>
-        <nuxt-link exact to="/">Home</nuxt-link>
+        <nuxt-link exact to="/"><app-icon></app-icon>Logo</nuxt-link>
       </li>
       <li>
         <nuxt-link to="/about">About</nuxt-link>
@@ -12,17 +12,27 @@
 </template>
 
 <script>
-export default {};
+import AppIcon from "@/components/AppIcon.vue";
+
+export default {
+  components: {
+    AppIcon
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .nav {
   background: #000;
   color: #fff;
-  padding: 1em;
+  padding: 1em 100px;
 
   a {
     color: #fff;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 
@@ -30,7 +40,6 @@ div {
   align-items: center;
   display: flex;
   height: 100%;
-  justify-content: center;
   width: 100vw;
 }
 
