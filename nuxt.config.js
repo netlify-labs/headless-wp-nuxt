@@ -30,7 +30,7 @@ export default {
       {
         rel: "stylesheet",
         href:
-          "https://fonts.googleapis.com/css?family=Alata|Montserrat&display=swap"
+          "https://fonts.googleapis.com/css?family=Alata|Open+Sans&display=swap"
       }
     ]
   },
