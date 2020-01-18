@@ -3,7 +3,6 @@
     <app-masthead></app-masthead>
     <div class="posts">
       <main>
-        <h2>Posts</h2>
         <div class="post" v-for="post in sortedPosts" :key="post.id">
           <h3>
             <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
@@ -77,8 +76,8 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
-  grid-column-gap: 30px;
-  margin: 3em auto;
+  grid-column-gap: 6vw;
+  margin: 5em auto;
   max-width: 80vw;
 }
 
@@ -102,10 +101,16 @@ a:visited {
 }
 
 a.readmore {
-  color: #741910;
-  padding-top: 20px;
-  display: block;
-  text-align: right;
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  position: relative;
+  color: #000;
+  font-weight: 700;
+  font-family: "Open Sans", serif;
+  border: 1px solid #ddd;
 }
 
 .tags-title {
@@ -114,8 +119,7 @@ a.readmore {
   border: none;
   text-transform: capitalize;
   letter-spacing: 0;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   padding: 15px;
   margin: 0 35px;
   position: relative;
@@ -129,15 +133,14 @@ a.readmore {
 }
 
 .post {
-  background-color: #fff;
-  border: 1px solid #eaeaea;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid #eaeaea;
   margin-bottom: 2em;
-  padding: 2em;
+  padding-bottom: 2em;
+  color: #444;
 
   h3 {
-    margin-bottom: 1em;
-    font-size: 25px;
+    margin-bottom: 0.5em;
+    font-size: 26px;
   }
 }
 
