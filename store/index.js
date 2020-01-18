@@ -38,10 +38,10 @@ export const actions = {
       console.log(err)
     }
   },
-  async getTags({ state, commit }, posts) {
+  async getTags({ state, commit }) {
     if (state.tags.length) return
 
-    let allTags = posts.reduce((acc, item) => {
+    let allTags = state.posts.reduce((acc, item) => {
       return acc.concat(item.tags)
     }, [])
     allTags = allTags.join()
