@@ -1,32 +1,34 @@
 <template>
-  <div class="posts">
+  <div>
     <app-masthead></app-masthead>
-    <main>
-      <h2>Posts</h2>
-      <div class="post" v-for="post in sortedPosts" :key="post.id">
-        <h3>
-          <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
-        </h3>
-        <div v-html="post.excerpt.rendered"></div>
-        <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
-      </div>
-    </main>
-    <aside>
-      <h2>Tags</h2>
-      <div class="tags-list">
-        <ul>
-          <li
-            @click="updateTag(tag)"
-            v-for="tag in tags"
-            :key="tag.id"
-            :class="[tag.id === selectedTag ? activeClass : '']"
-          >
-            <a>{{ tag.name }}</a>
-            <span v-if="tag.id === selectedTag">✕</span>
-          </li>
-        </ul>
-      </div>
-    </aside>
+    <div class="posts">
+      <main>
+        <h2>Posts</h2>
+        <div class="post" v-for="post in sortedPosts" :key="post.id">
+          <h3>
+            <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
+          </h3>
+          <div v-html="post.excerpt.rendered"></div>
+          <a :href="`blog/${post.slug}`" class="readmore">Read more ⟶</a>
+        </div>
+      </main>
+      <aside>
+        <h2>Tags</h2>
+        <div class="tags-list">
+          <ul>
+            <li
+              @click="updateTag(tag)"
+              v-for="tag in tags"
+              :key="tag.id"
+              :class="[tag.id === selectedTag ? activeClass : '']"
+            >
+              <a>{{ tag.name }}</a>
+              <span v-if="tag.id === selectedTag">✕</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </div>
 </template>
 

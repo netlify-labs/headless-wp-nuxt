@@ -1,7 +1,6 @@
 <template>
   <section class="masthead">
-    <h2>Hey there!</h2>
-    <h1>My name is {{ name }}</h1>
+    <h1>{{ tagline }}</h1>
   </section>
 </template>
 
@@ -9,7 +8,7 @@
 export default {
   data() {
     return {
-      name: "Padi mi"
+      tagline: "Headless WordPress on the JAMstack"
     };
   }
 };
@@ -19,8 +18,13 @@ export default {
 @import "@/assets/mixins.scss";
 section.masthead {
   width: 100%;
-  height: 60vw;
+  height: 90vh;
   overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7vw;
   background: -moz-radial-gradient(
       center,
       ellipse cover,
@@ -28,7 +32,7 @@ section.masthead {
       rgba(0, 0, 0, 0) 37%,
       rgba(0, 0, 0, 0.65) 100%
     ),
-    url("/lake-photo.jpg") no-repeat center center scroll; /* FF3.6-15 */
+    url("/mountains-masthead.jpg") no-repeat center center scroll; /* FF3.6-15 */
   background: -webkit-radial-gradient(
       center,
       ellipse cover,
@@ -36,24 +40,19 @@ section.masthead {
       rgba(0, 0, 0, 0) 37%,
       rgba(0, 0, 0, 0.65) 100%
     ),
-    url("/lake-photo.jpg") no-repeat center center scroll; /* Chrome10-25,Safari5.1-6 */
+    url("/mountains-masthead.jpg") no-repeat center center scroll; /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(
       ellipse at center,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 0) 37%,
       rgba(0, 0, 0, 0.65) 100%
     ),
-    url("/lake-photo.jpg") no-repeat center center scroll; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    url("/mountains-masthead.jpg") no-repeat center center scroll; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background-size: cover;
   color: #333;
   h1 {
-    margin-top: 0.5em;
-    @include fluid-type(font-size, 320px, 1366px, 30px, 100px);
-  }
-  h2 {
-    margin-top: 0;
-    padding-top: 1em;
-    @include fluid-type(font-size, 320px, 1366px, 15px, 60px);
+    color: white;
+    @include fluid-type(font-size, 320px, 1366px, 30px, 65px);
   }
 }
 </style>
