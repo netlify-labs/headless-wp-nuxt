@@ -7,7 +7,7 @@
           <h3>
             <a :href="`blog/${post.slug}`">{{ post.title.rendered }}</a>
           </h3>
-          <small>{{ post.date | formatDate }}</small>
+          <small>{{ post.date | dateformat }}</small>
           <div v-html="post.excerpt.rendered"></div>
           <a :href="`blog/${post.slug}`" class="readmore slide">Read more ⟶</a>
         </div>
@@ -55,15 +55,6 @@ export default {
     sortedPosts() {
       if (!this.selectedTag) return this.posts;
       return this.posts.filter(el => el.tags.includes(this.selectedTag));
-    }
-  },
-  filters: {
-    formatDate(value) {
-      return new Date(value).toLocaleDateString("en-GB", {
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      });
     }
   },
   created() {
@@ -141,10 +132,6 @@ a.readmore {
   background: #f5f5f5;
   padding: 70px 25px 25px;
   margin-top: -65px;
-}
-
-small {
-  color: #9d5615;
 }
 
 .post {

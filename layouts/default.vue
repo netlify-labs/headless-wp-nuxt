@@ -50,7 +50,6 @@ h3 {
 }
 
 h1 {
-  color: #741910;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -62,6 +61,10 @@ img {
 video {
   width: 100%;
   margin: 25px 0;
+}
+
+small {
+  color: #9d5615;
 }
 
 pre,

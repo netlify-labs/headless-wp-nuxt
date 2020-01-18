@@ -20,8 +20,6 @@ export default {};
   max-width: 800px;
   padding: 50px 50px 70px;
   background: white;
-  border: 1px solid #eaeaea;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 p {
