@@ -42,7 +42,7 @@ div {
   align-items: center;
   display: flex;
   height: 100%;
-  width: 100vw;
+  width: 100%;
 }
 
 ul {
