@@ -10,7 +10,7 @@ Click the "Deploy to Netlify" button, and you can configure it to fit your needs
 
 ![Headless WordPress Template Preview](https://i.ibb.co/4wkXsxj/fullpreview-smashing.png "Template preview")
 
-Article explaining full setup coming on Smashing Magazine soon!
+An [article explaining how we set this all up is available on Smashing Magazine](https://www.smashingmagazine.com/2020/02/headless-wordpress-site-jamstack/).
 
 ## Build Setup
 
