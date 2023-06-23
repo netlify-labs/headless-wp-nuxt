@@ -12,10 +12,10 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.17.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
-    "sass-loader": "^8.0.0"
+    "node-sass": "^9.0.0",
+    "sass-loader": "^13.3.2"
   }
 }
